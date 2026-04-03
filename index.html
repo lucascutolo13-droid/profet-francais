@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Projet Français Hologramme</title>
+<title>Projet Français Hologramme Discret</title>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
 
 /* RESET */
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Orbitron', sans-serif;scroll-behavior:smooth;}
-body{background:#000;color:#0ff;overflow-x:hidden;}
+body{background:#0b0c1a;color:#a8cbd1;overflow-x:hidden;}
 
 /* FOND PARTICULES 3D */
 canvas#bgCanvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;}
@@ -18,11 +18,11 @@ canvas#bgCanvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;}
 /* NAVBAR HOLO */
 nav{
 position:fixed;top:0;width:100%;display:flex;justify-content:center;gap:30px;
-padding:20px;background:rgba(0,0,0,0.5);backdrop-filter:blur(15px);z-index:1000;
+padding:20px;background:rgba(15,15,35,0.6);backdrop-filter:blur(12px);z-index:1000;
 transition:0.2s;
 }
-nav a{color:#0ff;font-weight:bold;transition:0.3s;}
-nav a:hover{color:#ff0;transform:scale(1.1);}
+nav a{color:#a8cbd1;font-weight:bold;transition:0.3s;}
+nav a:hover{color:#e0f7fa;transform:scale(1.05);}
 
 /* HEADER HOLO */
 header{
@@ -30,41 +30,39 @@ height:100vh;display:flex;flex-direction:column;justify-content:center;align-ite
 perspective:1000px;
 }
 header h1{
-font-size:4em;color:#0ff;text-shadow:0 0 20px #0ff,0 0 40px #ff0,0 0 60px #0ff;
+font-size:4em;color:#a8cbd1;text-shadow:0 0 15px #a8cbd1,0 0 30px #7aa3b0;
 animation:float 4s infinite alternate ease-in-out;
 }
 header p{
-color:#fff;opacity:0.8;font-size:1.5em;text-shadow:0 0 10px #0ff;
+color:#cfe8eb;opacity:0.8;font-size:1.5em;text-shadow:0 0 8px #cfe8eb;
 animation:float 6s infinite alternate ease-in-out;
 }
-@keyframes float{0%{transform:translateY(0px) rotateX(0deg);}50%{transform:translateY(-15px) rotateX(3deg);}100%{transform:translateY(0px) rotateX(0deg);}}
+@keyframes float{0%{transform:translateY(0px) rotateX(0deg);}50%{transform:translateY(-12px) rotateX(2deg);}100%{transform:translateY(0px) rotateX(0deg);}}
 
 /* SECTIONS HOLO */
 section{
-background:rgba(255,255,255,0.05);margin:80px auto;padding:50px;width:80%;border-radius:20px;
-box-shadow:0 0 20px #0ff,0 0 40px #ff0;opacity:0;transform:translateY(80px) rotateX(20deg) rotateY(10deg);
+background:rgba(255,255,255,0.04);margin:80px auto;padding:50px;width:80%;border-radius:20px;
+box-shadow:0 0 10px #a8cbd1,0 0 20px #7aa3b0;opacity:0;transform:translateY(80px) rotateX(20deg) rotateY(10deg);
 transition:1s;
 }
 section.visible{opacity:1;transform:translateY(0) rotateX(0) rotateY(0);}
-h2{font-size:2em;color:#0ff;text-shadow:0 0 10px #0ff;}
-blockquote{margin:20px 0;padding:20px;border-left:4px solid #0ff;font-style:italic;color:#0ff;}
+h2{font-size:2em;color:#a8cbd1;text-shadow:0 0 6px #a8cbd1;}
+blockquote{margin:20px 0;padding:20px;border-left:4px solid #7aa3b0;font-style:italic;color:#cfe8eb;}
 
 /* BOUTON TOP HOLO */
-#topBtn{position:fixed;bottom:30px;right:30px;background:#0ff;border:none;padding:15px;border-radius:50%;font-size:20px;color:#000;cursor:pointer;box-shadow:0 0 20px #0ff;display:none;transition:0.3s;}
-#topBtn:hover{background:#ff0;color:#000;box-shadow:0 0 40px #ff0;transform:scale(1.2);}
+#topBtn{position:fixed;bottom:30px;right:30px;background:#7aa3b0;border:none;padding:15px;border-radius:50%;font-size:20px;color:#0b0c1a;cursor:pointer;box-shadow:0 0 10px #7aa3b0;display:none;transition:0.3s;}
+#topBtn:hover{background:#a8cbd1;color:#0b0c1a;box-shadow:0 0 20px #a8cbd1;transform:scale(1.1);}
 
 /* FOOTER */
-footer{text-align:center;padding:40px;color:#0ff;letter-spacing:2px;}
+footer{text-align:center;padding:40px;color:#a8cbd1;letter-spacing:2px;}
 
-/* NEON COLOR ANIMATION */
+/* NEON COLOR ANIMATION (discret) */
 @keyframes neonGlow{
-0%{text-shadow:0 0 5px #0ff,0 0 10px #0ff;}
-25%{text-shadow:0 0 10px #ff0,0 0 20px #ff0;}
-50%{text-shadow:0 0 15px #0ff,0 0 30px #0ff;}
-75%{text-shadow:0 0 20px #ff0,0 0 40px #ff0;}
-100%{text-shadow:0 0 25px #0ff,0 0 50px #0ff;}
+0%{text-shadow:0 0 3px #a8cbd1,0 0 6px #7aa3b0;}
+50%{text-shadow:0 0 6px #a8cbd1,0 0 12px #7aa3b0;}
+100%{text-shadow:0 0 3px #a8cbd1,0 0 6px #7aa3b0;}
 }
-h1,h2,blockquote{animation:neonGlow 3s infinite alternate;}
+h1,h2,blockquote{animation:neonGlow 4s infinite alternate;}
 
 </style>
 </head>
@@ -81,29 +79,29 @@ h1,h2,blockquote{animation:neonGlow 3s infinite alternate;}
 </nav>
 
 <header>
-<h1>Ma Problématique Hologramme</h1>
-<p>Projet interactif futuriste</p>
+<h1>Ma Problématique Futuriste</h1>
+<p>Projet interactif de français</p>
 </header>
 
 <section id="intro">
 <h2>Introduction</h2>
-<p>Un site futuriste et holographique pour présenter la problématique.</p>
+<p>Un site futuriste et élégant pour présenter la problématique.</p>
 <blockquote>“Le futur se construit avec les mots d’aujourd’hui.”</blockquote>
 </section>
 
 <section id="arg1">
 <h2>Argument 1</h2>
-<p>Premier argument stylé avec effet hologramme.</p>
+<p>Premier argument stylé avec effet hologramme discret.</p>
 </section>
 
 <section id="arg2">
 <h2>Argument 2</h2>
-<p>Deuxième argument avec exemples et glow futuriste.</p>
+<p>Deuxième argument avec exemples et glow subtil.</p>
 </section>
 
 <section id="conclusion">
 <h2>Conclusion</h2>
-<p>Réponse à la problématique avec ouverture futuriste.</p>
+<p>Réponse à la problématique avec ouverture futuriste et élégante.</p>
 </section>
 
 <footer>
@@ -124,26 +122,25 @@ document.getElementById("topBtn").style.display=window.scrollY>400?"block":"none
 document.getElementById("topBtn").onclick=()=>window.scrollTo({top:0,behavior:"smooth"});
 });
 
-// PARTICULES 3D HOLO
+// PARTICULES 3D DISCRET
 const canvas=document.getElementById("bgCanvas");
 const ctx=canvas.getContext("2d");
 canvas.width=window.innerWidth;
 canvas.height=window.innerHeight;
 const particles=[];
-for(let i=0;i<200;i++){
-particles.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,z:Math.random()*500-250,r:Math.random()*2+1,dx:(Math.random()-0.5)*1.5,dy:(Math.random()-0.5)*1.5,dz:(Math.random()-0.5)*1.5});
+for(let i=0;i<150;i++){
+particles.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,z:Math.random()*500-250,r:Math.random()*1.5+0.5,dx:(Math.random()-0.5)*1.2,dy:(Math.random()-0.5)*1.2,dz:(Math.random()-0.5)*1.2});
 }
 function draw(){
-ctx.fillStyle="rgba(0,0,0,0.2)";
+ctx.fillStyle="rgba(11,12,26,0.2)";
 ctx.fillRect(0,0,canvas.width,canvas.height);
 particles.forEach(p=>{
-// perspective
 const scale=500/(500+p.z);
 const x=p.x*scale+canvas.width/2-canvas.width/2*scale;
 const y=p.y*scale+canvas.height/2-canvas.height/2*scale;
 ctx.beginPath();
-ctx.arc(x,y,p.r*scale,0,Math.PI*2);
-ctx.fillStyle="#0ff";ctx.fill();
+ctx.arc(x,y,p.r,0,Math.PI*2);
+ctx.fillStyle="#a8cbd1";ctx.fill();
 p.x+=p.dx;p.y+=p.dy;p.z+=p.dz;
 if(p.x<0||p.x>canvas.width)p.dx*=-1;
 if(p.y<0||p.y>canvas.height)p.dy*=-1;
@@ -155,7 +152,7 @@ draw();
 
 // NAV PARALLAXE MOUSE
 document.addEventListener("mousemove",(e)=>{
-document.querySelector("nav").style.transform=`translateX(${(e.clientX-window.innerWidth/2)/40}px) translateY(${(e.clientY-window.innerHeight/2)/40}px)`;
+document.querySelector("nav").style.transform=`translateX(${(e.clientX-window.innerWidth/2)/50}px) translateY(${(e.clientY-window.innerHeight/2)/50}px)`;
 });
 
 </script>
