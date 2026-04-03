@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Projet Français Hologramme Discret</title>
+<title>Projet Français Futuriste</title>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
@@ -49,6 +49,22 @@ section.visible{opacity:1;transform:translateY(0) rotateX(0) rotateY(0);}
 h2{font-size:2em;color:#a8cbd1;text-shadow:0 0 6px #a8cbd1;}
 blockquote{margin:20px 0;padding:20px;border-left:4px solid #7aa3b0;font-style:italic;color:#cfe8eb;}
 
+/* IMAGES HOLO */
+.holo-img{
+  display:block;
+  margin:20px auto;
+  max-width:90%;
+  border-radius:15px;
+  box-shadow:0 0 15px rgba(168,203,209,0.6),0 0 30px rgba(122,163,176,0.4);
+  opacity:0;
+  transform:translateY(40px);
+  transition:1s;
+}
+.holo-img.visible{
+  opacity:1;
+  transform:translateY(0);
+}
+
 /* BOUTON TOP HOLO */
 #topBtn{position:fixed;bottom:30px;right:30px;background:#7aa3b0;border:none;padding:15px;border-radius:50%;font-size:20px;color:#0b0c1a;cursor:pointer;box-shadow:0 0 10px #7aa3b0;display:none;transition:0.3s;}
 #topBtn:hover{background:#a8cbd1;color:#0b0c1a;box-shadow:0 0 20px #a8cbd1;transform:scale(1.1);}
@@ -87,21 +103,25 @@ h1,h2,blockquote{animation:neonGlow 4s infinite alternate;}
 <h2>Introduction</h2>
 <p>Un site futuriste et élégant pour présenter la problématique.</p>
 <blockquote>“Le futur se construit avec les mots d’aujourd’hui.”</blockquote>
+<img src="images/intro.jpg" alt="Intro image" class="holo-img">
 </section>
 
 <section id="arg1">
 <h2>Argument 1</h2>
-<p>Premier argument stylé avec effet hologramme discret.</p>
+<p>Premier argument stylé avec image illustrative.</p>
+<img src="images/arg1.jpg" alt="Argument 1 image" class="holo-img">
 </section>
 
 <section id="arg2">
 <h2>Argument 2</h2>
-<p>Deuxième argument avec exemples et glow subtil.</p>
+<p>Deuxième argument avec exemples et illustration.</p>
+<img src="images/arg2.jpg" alt="Argument 2 image" class="holo-img">
 </section>
 
 <section id="conclusion">
 <h2>Conclusion</h2>
 <p>Réponse à la problématique avec ouverture futuriste et élégante.</p>
+<img src="images/conclusion.jpg" alt="Conclusion image" class="holo-img">
 </section>
 
 <footer>
@@ -111,18 +131,24 @@ h1,h2,blockquote{animation:neonGlow 4s infinite alternate;}
 <button id="topBtn">↑</button>
 
 <script>
-// SCROLL SECTIONS
+// SCROLL SECTIONS & IMAGES
 const sections=document.querySelectorAll("section");
+const holoImages=document.querySelectorAll(".holo-img");
 window.addEventListener("scroll",()=>{
 sections.forEach(s=>{
-const top=s.getBoundingClientRect().top;
-if(top<window.innerHeight-100){s.classList.add("visible");}
-document.getElementById("topBtn").style.display=window.scrollY>400?"block":"none";
+  const top=s.getBoundingClientRect().top;
+  if(top<window.innerHeight-100){s.classList.add("visible");}
 });
+holoImages.forEach(img=>{
+  const top=img.getBoundingClientRect().top;
+  if(top<window.innerHeight-100){img.classList.add("visible");}
+});
+// bouton top
+document.getElementById("topBtn").style.display=window.scrollY>400?"block":"none";
 document.getElementById("topBtn").onclick=()=>window.scrollTo({top:0,behavior:"smooth"});
 });
 
-// PARTICULES 3D DISCRET
+// PARTICULES 3D HOLO
 const canvas=document.getElementById("bgCanvas");
 const ctx=canvas.getContext("2d");
 canvas.width=window.innerWidth;
